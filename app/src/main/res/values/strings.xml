@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name" translatable="false">Foody</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="go_back" >Go back</string>
+    <string name="description">Description</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="history">History</string>
+    <string name="user">User</string>
+    <string name="favourites">Favourites</string>
+    <string name="home">Home</string>
+    <string name="open_drawer">open</string>
+    <string name="close_drawer">close</string>
+    <string name="foods">Foods</string>
+    <string name="drinks">Drinks</string>
+    <string name="snacks">Snacks</string>
+    <string name="food_image">Food image</string>
+    <string name="food_details">Food Details</string>
+    <string name="see_more">See more</string>
+    <string name="cart">Cart</string>
+    <string name="swipe_to_delete">Swipe to delete</string>
+    <string name="swipe_on_item_to_delete">Swipe on item to delete</string>
+    <string name="complete_order">Complete order</string>
+    <string name="price" translatable="false">%1$s MAD</string>
+    <string name="checkout">Checkout</string>
+    <string name="delivery">Delivery</string>
+    <string name="address_details">Address details</string>
+    <string name="change">change</string>
+    <string name="payment_method">Payment method</string>
+    <string name="card">Card</string>
+    <string name="bank_account">Bank account</string>
+    <string name="total">Total</string>
+    <string name="proceed_to_payment">Proceed to payment</string>
+    <string name="cash_on_delivery">Cash on delivery</string>
+    <string name="undo">Undo</string>
+    <string name="order_delete_successfully">Order successfully deleted</string>
+    <string name="map">Map</string>
+    <string name="select_this_adress">Select this address</string>
+    <string name="ignore">Ignore</string>
+    <string name="your_phone_number">Your phone number</string>
+    <string name="next">Next</string>
+    <string name="or">Or</string>
+    <string name="sing_in_with_email">Sing in with email</string>
+    <string name="facebook" translatable="false">Facebook</string>
+    <string name="google" translatable="false">Google</string>
+    <string name="code_verification">Code verification</string>
+    <string name="phone_number">Phone number</string>
+    <string name="adress">Address</string>
+    <string name="your_name">Your name</string>
+    <string name="empty_cart">Empty cart</string>
+    <string name="no_item_added_to_cart_yet">No item added to cart yet</string>
+    <string name="search">Search</string>
+    <string name="sign_out">Sign-out</string>
+    <string name="web_client_id" translatable="false">360692135678-srt4ip6k65gg4vk4l9pcthcdj6nh9ee1.apps.googleusercontent.com</string>
+    <string name="facebook_app_id" translatable="false">3599908146799636</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb3599908146799636</string>
+    <string name="facebook_client_token" translatable="false">90f42d1819c035b8c74760c1914ffce1</string>
+    <string name="channel_name" translatable="false">delivery_channel</string>
+    <string name="channel_description" translatable="false">channel for delivery app</string>
+    <string name="sign_in_with_facebook">Sign In With Facebook</string>
+    <string name="sign_in_with_google">Sign In With Google</string>
+    <string name="app_logo" translatable="false">App Logo</string>
+    <string name="name">Name</string>
+    <string name="no_address_selected">No address selected</string>
+    <string name="no_phone_number">No phone number</string>
+    <string name="delicious_nfood_for_you">Delicious \nfood for you</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="please_add_your_address">Please add your address</string>
+    <string name="please_add_your_phone_number">Please add your phone number</string>
+    <string name="please_select_a_payment_method">Please select a payment method</string>
+    <string name="please_write_a_valid_number">Please enter a valid number</string>
+    <string name="make_order">Make the order</string>
+    <string name="new_order_messgae">Hello %1$s! you have new order</string>
+    <string name="new_odrer" >New order</string>
+    <string name="permission_required_toast">Permission Required</string>
+    <string name="permission_rationale_location">Permission Rationale Location</string>
+    <string name="no_orders_yet">No orders yet</string>
+</resources>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/foody_graph"
+    app:startDestination="@id/homeFragment">
+
+    <action
+        android:id="@+id/action_global_homeFragment"
+        app:destination="@id/homeFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="true" />
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.imadev.foody.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_foodDetailsFragment"
+            app:destination="@id/foodDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/foodDetailsFragment"
+        android:name="com.imadev.foody.ui.FoodDetailsFragment"
+        tools:layout="@layout/fragment_food_details">
+        <argument
+            android:name="food_arg"
+            app:argType="com.imadev.foody.model.Meal" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.imadev.foody.ui.favorites.FavoritesFragment"
+        tools:layout="@layout/fragment_favorites" />
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.imadev.foody.ui.history.HistoryFragment" />
+
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.imadev.foody.ui.user.UserFragment"
+        tools:layout="@layout/fragment_user">
+        <action
+            android:id="@+id/action_userFragment_to_userDashboardFragment"
+            app:destination="@id/userDashboardFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_deliveryDashboardFragment"
+            app:destination="@id/deliveryDashboardFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_adminDashboardFragment"
+            app:destination="@id/adminDashboardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userDashboardFragment"
+        android:name="com.imadev.foody.ui.user.UserDashboardFragment"
+        tools:layout="@layout/fragment_user_dashboard">
+        <action
+            android:id="@+id/action_userDashboardFragment_to_orderTrackingFragment"
+            app:destination="@id/orderTrackingFragment" />
+        <action
+            android:id="@+id/action_userDashboardFragment_to_userOrderDetailsFragment"
+            app:destination="@id/userOrderDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/orderTrackingFragment"
+        android:name="com.imadev.foody.ui.user.OrderTrackingFragment"
+        tools:layout="@layout/fragment_order_tracking">
+        <argument
+            android:name="orderId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userOrderDetailsFragment"
+        android:name="com.imadev.foody.ui.user.UserOrderDetailsFragment"
+        tools:layout="@layout/fragment_user_order_details">
+        <argument
+            android:name="orderId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/deliveryDashboardFragment"
+        android:name="com.imadev.foody.ui.delivery.DeliveryDashboardFragment"
+        tools:layout="@layout/fragment_delivery_dashboard" />
+
+    <fragment
+        android:id="@+id/driverOrdersFragment"
+        android:name="com.imadev.foody.ui.delivery.DriverOrdersFragment"
+        tools:layout="@layout/fragment_driver_orders">
+        <action
+            android:id="@+id/action_driverOrdersFragment_to_deliveryTrackingFragment"
+            app:destination="@id/deliveryTrackingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/deliveryTrackingFragment"
+        android:name="com.imadev.foody.ui.delivery.DeliveryTrackingFragment"
+        tools:layout="@layout/fragment_delivery_tracking" />
+
+    <fragment
+        android:id="@+id/driverHistoryFragment"
+        android:name="com.imadev.foody.ui.delivery.DriverHistoryFragment"
+        tools:layout="@layout/fragment_driver_history" />
+
+    <!-- Admin Fragments -->
+    <fragment
+        android:id="@+id/adminDashboardFragment"
+        android:name="com.imadev.foody.ui.admin.AdminDashboardFragment"
+        tools:layout="@layout/fragment_admin_dashboard">
+        <action
+            android:id="@+id/action_adminDashboardFragment_to_adminOrdersFragment"
+            app:destination="@id/adminOrdersFragment" />
+        <action
+            android:id="@+id/action_adminDashboardFragment_to_adminDriversFragment"
+            app:destination="@id/adminDriversFragment" />
+        <action
+            android:id="@+id/action_adminDashboardFragment_to_adminUsersFragment"
+            app:destination="@id/adminUsersFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminOrdersFragment"
+        android:name="com.imadev.foody.ui.admin.AdminOrdersFragment"
+        tools:layout="@layout/fragment_admin_orders">
+        <action
+            android:id="@+id/action_adminOrdersFragment_to_adminOrderDetailsFragment"
+            app:destination="@id/adminOrderDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminOrderDetailsFragment"
+        android:name="com.imadev.foody.ui.admin.AdminOrderDetailsFragment"
+        tools:layout="@layout/fragment_admin_order_details">
+        <argument
+            android:name="orderId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/adminDriversFragment"
+        android:name="com.imadev.foody.ui.admin.AdminDriversFragment"
+        tools:layout="@layout/fragment_admin_drivers" />
+
+    <fragment
+        android:id="@+id/adminUsersFragment"
+        android:name="com.imadev.foody.ui.admin.AdminUsersFragment"
+        tools:layout="@layout/fragment_admin_users" />
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.imadev.foody.ui.checkout.CartFragment"
+        tools:layout="@layout/fragment_cart">
+        <action
+            android:id="@+id/action_cartFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.imadev.foody.ui.checkout.CheckoutFragment"
+        tools:layout="@layout/fragment_checkout">
+        <action
+            android:id="@+id/action_checkoutFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_checkoutFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/foody_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.imadev.foody.ui.map.MapsFragment"
+        tools:layout="@layout/fragment_maps" />
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.imadev.foody.ui.home.SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_foodDetailsFragment"
+            app:destination="@id/foodDetailsFragment" />
+    </fragment>
+</navigation>
