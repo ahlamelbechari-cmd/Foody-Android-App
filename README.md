@@ -1,34 +1,72 @@
-# Foody
+# Foody - Delivery Application
 
-# MVVM Architecture
-This project follows the Model-View-ViewModel (MVVM) architecture pattern. The MVVM pattern separates the user interface (View) from the data (Model) and the logic (ViewModel) of an application.
+Foody is a modern Android application for meal ordering and delivery, featuring a real-time GPS tracking system. The application manages three user roles: Clients, Delivery Drivers, and Administrators.
 
-The Model represents the data and business logic of the application, the View displays the user interface, and the ViewModel acts as a mediator between the View and the Model, providing data to the View and updating the Model as necessary.
+## Key Features
 
-By using the MVVM pattern, the code is more modular, easier to maintain, and testable.
+### Client Side
+- Meal Catalog: Browse menus and add dishes to the cart.
+- Smart Ordering: Select the delivery address directly on a Google Maps interface.
+- Real-time Tracking: Visualize the driver's position on a map with an animated car icon and the route (Polyline).
+- Order History: Consult past orders and their real-time status.
 
-# Continuous Integration and Continuous Deployment (CI/CD)
-This project uses GitHub as a platform for Continuous Integration and Continuous Deployment (CI/CD).
+### Delivery Side (Driver)
+- Status Management: Toggle availability status (Online/Offline).
+- Delivery Management: Accept and manage pending orders in the vicinity.
+- GPS Guidance: Automatic distance and earnings calculation. Integrated navigation via Google Maps.
+- Active Tracking: Automatic GPS position updates for the client during delivery.
 
-**Continuous Integration (CI)** is the process of automatically building and testing the code whenever a change is made. This helps to catch errors and bugs early in the development process.
+### Administration Side
+- Centralized Dashboard: Overview of platform activity.
+- User Management: Control and monitor client and driver accounts.
+- Order Supervision: Monitor all active order flows and their respective statuses.
 
-**Continuous Deployment (CD)** is the process of automatically deploying the code to a staging or production environment whenever a change is made and successfully passed all tests.
+## Technical Stack
 
-**In addition, the project utilizes the following tools to facilitate the CI/CD process:**
+- Language: Kotlin
+- Architecture: MVVM (Model-View-ViewModel)
+- Dependency Injection: Hilt / Dagger
+- Backend & Database:
+    - Firebase Auth: User authentication.
+    - Firebase Realtime Database: Real-time location tracking.
+    - Firebase Firestore: Structured data storage for orders and users.
+- UI/UX Components:
+    - Jetpack Navigation Component
+    - View Binding / Data Binding
+    - Material Design 3
+    - MotionLayout: Navigation drawer animations.
+- Mapping: Google Maps SDK & Fused Location Provider API
 
-# GitHub
-**GitHub** is used as a version control system and as a platform for CI/CD. By integrating GitHub with other tools, such as Fastlane and Firebase Distribution, the project can automate the build, testing, and deployment processes.
+## Project Structure
 
-# Fastlane
-Fastlane is an open-source platform that simplifies the deployment of Android and iOS applications. It automates the process of building, testing, and deploying applications, saving time and reducing errors.
+```text
+com.imadev.foody
+├── adapter       # RecyclerView Adapters (Orders, Meals, Drivers, Users)
+├── model         # Data Models (Order, Meal, Client, DeliveryUser, Address)
+├── repository    # Data access layer (Firebase implementations)
+├── ui            # Fragments and Activities
+│   ├── admin     # Dashboard and Admin management fragments
+│   ├── auth      # Login, SignUp, and OTP authentication
+│   ├── checkout  # Cart and order validation logic
+│   ├── delivery  # Driver interface and tracking logic
+│   ├── map       # Address selection logic
+│   └── user      # Client profile and order tracking
+└── utils         # Extensions, Constants, and Helpers
+```
 
-# Firebase Distribution
-**Firebase Distribution** is a tool provided by Google Firebase that facilitates the distribution of applications to trusted testers. By quickly installing the application on the devices of testers, feedback can be obtained early and often, helping to identify and resolve issues quickly.
+## Installation and Setup
 
-Overall, the use of these tools in conjunction with GitHub allows for a streamlined and efficient CI/CD process, enabling the project team to focus on developing high-quality code.
+1. Clone the project:
+   ```bash
+   git clone https://github.com/ahlamelbechari-cmd/Foody-Android-App.git
+   ```
+2. Firebase Configuration:
+   - Place your `google-services.json` file in the `app/` directory.
+   - Enable Authentication (Email/Phone), Firestore, and Realtime Database in the Firebase Console.
+3. Google Maps API:
+   - Add your Google Maps API Key to the `local.properties` file:
+     ```properties
+     MAPS_API_KEY=YOUR_API_KEY
+     ```
+4. Build: Compile and run the project using Android Studio.
 
-
-<figure>
-  <img src="https://i.imgur.com/Y5YfTuR.png" alt="alt text">
-  <figcaption>CI/CD Architecture</figcaption>
-</figure>
