@@ -1,72 +1,74 @@
-# Foody - Delivery Application
+# Foody - Application de Livraison
 
-Foody is a modern Android application for meal ordering and delivery, featuring a real-time GPS tracking system. The application manages three user roles: Clients, Delivery Drivers, and Administrators.
+Foody est une application Android moderne pour la commande et la livraison de repas, intégrant un système de suivi GPS en temps réel. L'application gère trois rôles d'utilisateurs : Clients, Livreurs et Administrateurs.
 
-## Key Features
+## Fonctionnalités Clés
 
-### Client Side
-- Meal Catalog: Browse menus and add dishes to the cart.
-- Smart Ordering: Select the delivery address directly on a Google Maps interface.
-- Real-time Tracking: Visualize the driver's position on a map with an animated car icon and the route (Polyline).
-- Order History: Consult past orders and their real-time status.
+### Côté Client
+- Catalogue de repas : Parcourir les menus et ajouter des plats au panier.
+- Commande intelligente : Sélection de l'adresse de livraison directement sur une interface Google Maps.
+- Suivi en temps réel : Visualisation de la position du livreur sur une carte avec une icône de voiture animée et le tracé de l'itinéraire (Polyline).
+- Historique des commandes : Consultation des commandes passées et de leur statut en temps réel.
 
-### Delivery Side (Driver)
-- Status Management: Toggle availability status (Online/Offline).
-- Delivery Management: Accept and manage pending orders in the vicinity.
-- GPS Guidance: Automatic distance and earnings calculation. Integrated navigation via Google Maps.
-- Active Tracking: Automatic GPS position updates for the client during delivery.
+### Côté Livreur (Driver)
+- Gestion du statut : Activation/Désactivation de la disponibilité (En ligne/Hors ligne).
+- Gestion des livraisons : Acceptation et gestion des commandes en attente à proximité.
+- Guidage GPS : Calcul automatique de la distance et des gains. Navigation intégrée via Google Maps.
+- Suivi actif : Mise à jour automatique de la position GPS pour le client pendant la livraison.
 
-### Administration Side
-- Centralized Dashboard: Overview of platform activity.
-- User Management: Control and monitor client and driver accounts.
-- Order Supervision: Monitor all active order flows and their respective statuses.
+### Côté Administration
+- Tableau de bord centralisé : Vue d'ensemble de l'activité de la plateforme.
+- Gestion des utilisateurs : Contrôle et suivi des comptes clients et livreurs.
+- Supervision des commandes : Suivi de tous les flux de commandes actifs et de leurs statuts respectifs.
 
-## Technical Stack
+## Stack Technique
 
-- Language: Kotlin
-- Architecture: MVVM (Model-View-ViewModel)
-- Dependency Injection: Hilt / Dagger
-- Backend & Database:
-    - Firebase Auth: User authentication.
-    - Firebase Realtime Database: Real-time location tracking.
-    - Firebase Firestore: Structured data storage for orders and users.
-- UI/UX Components:
+- Langage : Kotlin
+- Architecture : MVVM (Model-View-ViewModel)
+- Injection de dépendances : Hilt / Dagger
+- Backend & Base de données :
+    - Firebase Auth : Authentification des utilisateurs.
+    - Firebase Realtime Database : Suivi de localisation en temps réel.
+    - Firebase Firestore : Stockage de données structurées pour les commandes et les utilisateurs.
+- Composants UI/UX :
     - Jetpack Navigation Component
     - View Binding / Data Binding
     - Material Design 3
-    - MotionLayout: Navigation drawer animations.
-- Mapping: Google Maps SDK & Fused Location Provider API
+    - MotionLayout : Animations du tiroir de navigation.
+- Cartographie : Google Maps SDK & Fused Location Provider API
 
-## Project Structure
+## Structure du Projet
 
 ```text
 com.imadev.foody
-├── adapter       # RecyclerView Adapters (Orders, Meals, Drivers, Users)
-├── model         # Data Models (Order, Meal, Client, DeliveryUser, Address)
-├── repository    # Data access layer (Firebase implementations)
-├── ui            # Fragments and Activities
-│   ├── admin     # Dashboard and Admin management fragments
-│   ├── auth      # Login, SignUp, and OTP authentication
-│   ├── checkout  # Cart and order validation logic
-│   ├── delivery  # Driver interface and tracking logic
-│   ├── map       # Address selection logic
-│   └── user      # Client profile and order tracking
-└── utils         # Extensions, Constants, and Helpers
+├── adapter       # Adaptateurs RecyclerView (Commandes, Plats, Livreurs, Utilisateurs)
+├── model         # Modèles de données (Order, Meal, Client, DeliveryUser, Address)
+├── repository    # Couche d'accès aux données (Implémentations Firebase)
+├── ui            # Fragments et Activités
+│   ├── admin     # Fragments de gestion administrative et dashboard
+│   ├── auth      # Authentification Login, SignUp et OTP
+│   ├── checkout  # Logique du panier et de validation de commande
+│   ├── delivery  # Interface livreur et logique de suivi
+│   ├── map       # Logique de sélection d'adresse
+│   └── user      # Profil client et suivi de commande
+└── utils         # Extensions, Constantes et Helpers
 ```
 
-## Installation and Setup
+## Installation et Configuration
 
-1. Clone the project:
+1. Cloner le projet :
    ```bash
    git clone https://github.com/ahlamelbechari-cmd/Foody-Android-App.git
    ```
-2. Firebase Configuration:
-   - Place your `google-services.json` file in the `app/` directory.
-   - Enable Authentication (Email/Phone), Firestore, and Realtime Database in the Firebase Console.
-3. Google Maps API:
-   - Add your Google Maps API Key to the `local.properties` file:
+2. Configuration Firebase :
+   - Placez votre fichier `google-services.json` dans le répertoire `app/`.
+   - Activez l'Authentification (Email/Téléphone), Firestore et Realtime Database dans la console Firebase.
+3. API Google Maps :
+   - Ajoutez votre clé API Google Maps dans le fichier `local.properties` :
      ```properties
-     MAPS_API_KEY=YOUR_API_KEY
+     MAPS_API_KEY=VOTRE_CLE_API
      ```
-4. Build: Compile and run the project using Android Studio.
+4. Build : Compilez et lancez le projet via Android Studio.
 
+## Licence
+Ce projet est réalisé dans un but éducatif dans le cadre du développement d'une plateforme de livraison de repas.
